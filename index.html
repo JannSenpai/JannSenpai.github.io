@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Ulang Tahun</title>
+    <script
+      src="https://kit.fontawesome.com/4b0758242d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font jasefin -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;900&family=Josefin+Sans:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;900&family=Josefin+Sans:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind output css -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .envelope-wrapper > .envelope {
+        position: relative;
+        width: 300px;
+        height: 230px;
+      }
+      .envelope-wrapper > .envelope::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        border-top: 130px solid #ecdeb8;
+        border-right: 150px solid transparent;
+        border-left: 150px solid transparent;
+        transform-origin: top;
+        transition: all 0.5s ease-in-out 0.7s;
+      }
+      .envelope-wrapper > .envelope::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        width: 0px;
+        height: 0px;
+        border-top: 130px solid transparent;
+        border-right: 150px solid #e6cfa7;
+        border-bottom: 100px solid #e6cfa7;
+        border-left: 150px solid #e6cfa7;
+      }
+
+      .heart {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        z-index: 4;
+        transform: translate(-50%, -20%);
+        transition: transform 0.5s ease-in-out 1s;
+        cursor: pointer;
+      }
+      .heart > img {
+        width: 75px;
+        height: 70px;
+      }
+
+      .flap > .envelope:before {
+        transform: rotateX(180deg);
+        z-index: 0;
+      }
+      .flap > .envelope > #letter {
+        bottom: 100px;
+        transform: scale(1.5);
+        transition-delay: 1s;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #999;
+        border-radius: 20px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #232323;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body class="overflow-y-auto">
+    <!-- Untuk background music -->
+    <audio controls autoplay loop hidden>
+      <source src="./public/music/HBD.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Start bagian ucapan -->
+    <section id="header" class="bg-blue-600 py-5 border-b-2 border-black">
+      <div class="text-center font-semibold">
+        <h1 class="font-poppins text-3xl mb-2">~Happy Birthday~</h1>
+        <h3 class="font-jasefin text-3xl text-slate-200">
+          Frinti Desti Annisa
+        </h3>
+      </div>
+    </section>
+    <!-- End bagian ucapan -->
+
+    <!-- start Bagian Biodata -->
+    <section id="biodata" class="bg-[#7743DB]">
+      <!-- title biodata -->
+      <div class="text-2xl font-semibold ml-1 pt-5 pl-2">
+        <h2 class="font-poppins">~Biodata</h2>
+      </div>
+      <!-- Content -->
+      <div
+        id="container"
+        class="max-h-[400px] flex overflow-x-auto overflow-y-hidden p-5"
+      >
+        <!-- Item 1 -->
+        <div
+          id="item"
+          class="min-w-[325px] h-[350px] leading-[20px] pl-5 bg-cardColor ml-2 rounded-lg shadow-box"
+        >
+          <!-- Gambar Gojo 1 -->
+          <img
+            src="./public/img/Gojo/Gojo1.png"
+            alt="Gojo"
+            class="w-[200px] h-[200px] mx-auto"
+          />
+          <div class="font-jasefin text-[1rem] pl-4 text-white">
+            <p>Nama : <span class="text-black"> Frinti Desti Annisa</span></p>
+            <p>Kelas : <span class="text-black"> TJKT C</span></p>
+            <p>Berat Badan : <span class="text-black"> 43kg</span></p>
+            <p>Tinggi Badan : <span class="text-black"> 160cm</span></p>
+            <p>
+              Cita-cita :
+              <span class="text-black">
+                Pebisnis sukses dan mendapatkan suami taat agama</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div
+          id="item"
+          class="min-w-[325px] h-[350px] leading-[20px] pl-5 bg-cardColor ml-64 rounded-lg shadow-box"
+        >
+          <!-- Gambar karma -->
+          <img
+            src="./public/img/Karma/Karma4.png"
+            alt="Karma1"
+            class="w-[180px] h-[190px] mx-auto"
+          />
+          <div class="font-jasefin text-[1rem] pl-4 text-white mt-5">
+            <p>
+              Makanan Favorit :
+              <span class="text-black">
+                Seblak pedas, silverqueen, pocky cookies, dll</span
+              >
+            </p>
+            <p>
+              Warna Favorit : <span class="text-black"> Hitam dan Merah</span>
+            </p>
+            <p>Idola : <span class="text-black"> Nabi Muhammad SAW</span></p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div
+          id="item"
+          class="min-w-[325px] h-[350px] leading-[20px] pl-5 bg-cardColor ml-64 rounded-lg shadow-box"
+        >
+          <!-- gambar toji -->
+          <img
+            src="./public/img/Toji/Toji3.png"
+            alt="Toji Fushiguro"
+            class="w-[160px] h-[160px] mx-auto"
+          />
+          <div class="font-jasefin text-[1rem] pl-2 text-white">
+            <p>Karakter Favorit :</p>
+            <p class="text-black">
+              <span class="text-white"> 1.</span>Gojo Satoru (Jujutsu Kaisen)
+            </p>
+            <p class="text-black">
+              <span class="text-white"> 2.</span>Toji Fushiguro (Jujutsu Kaisen)
+            </p>
+            <p class="text-black">
+              <span class="text-white"> 3.</span>Akabane Karma (Assassination
+              Classroom)
+            </p>
+            <p class="text-black">
+              <span class="text-white"> 4.</span>Rika Takanashi (Chunnibyou demo
+              koi ga shitai)
+            </p>
+            <p class="text-black">
+              <span class="text-white"> 5.</span>Tanaka-kun (Tanaka-kun wa
+              itsumo kedaruge)
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div
+          id="item"
+          class="min-w-[325px] h-[350px] leading-[20px] pl-5 bg-cardColor ml-64 rounded-lg shadow-box"
+        >
+          <!-- Gambar tanaka -->
+          <img
+            src="./public/img/Tanaka/Tanaka4.png"
+            alt="Tanaka1"
+            class="w-[230px] h-[200px] mx-auto"
+          />
+          <div class="font-jasefin text-[1rem] pl-2 text-black">
+            <p>
+              <span class="text-white"> Manga/Webtoon : </span>"Cinta pertamaku
+              penuh dengan drama"
+            </p>
+            <p>
+              <span class="text-white"> Koleksi : </span>sesuatu yang
+              berhubungan dengan Gojo Satoru
+            </p>
+            <p>
+              <span class="text-white"> Pandanganku :</span> Wibu, Pelupa,
+              Player efef, Baik, Gak alay, Pintar, Cerdas, Kurang percaya diri
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div
+          id="item"
+          class="min-w-[325px] h-[350px] leading-[20px] pl-5 bg-cardColor ml-64 rounded-lg shadow-box"
+        >
+          <!-- Gambar rika -->
+          <img
+            src="./public/img/Rika/Rika1.png"
+            alt="Rika1"
+            class="w-[150px] h-[200px] mx-auto"
+          />
+          <div class="font-jasefin text-[1rem] pl-1 pt-5 text-black">
+            <p>
+              <span class="text-white"> Prinsip hidup : </span>"Jangan pernah
+              katakan apapun yang ada dalam pikiranmu, kamu gak bisa percaya
+              sepenuhnya <br />
+              pada manusia (Billie Ellish)."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Bagian Biodata -->
+
+    <!-- Start bagian Foto-foto -->
+    <section id="foto" class="bg-blue-500 border-y-2 border-black">
+      <div id="titleFoto" class="text-2xl font-semibold ml-1 pt-5 pl-2">
+        <h2 class="font-poppins">~Foto-foto</h2>
+      </div>
+      <div class="p-2 grid grid-cols-2 gap-5">
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti1.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti2.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti3.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti4.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti5.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti6.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti7.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti8.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti9.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti10.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti11.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+        <div
+          class="h-15 bg-cyan-500 aspect-[4/3] rounded-lg overflow-hidden group relative hover:scale-95 transition-all duration-500 shadow-box"
+        >
+          <div
+            class="w-full h-full bg-[url('./src/Frinti/Frinti12.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"
+          ></div>
+        </div>
+      </div>
+    </section>
+    <!-- End bagian Foto-foto -->
+
+    <!-- Start bagian surat -->
+    <section id="surat" class="bg-[#7743DB] pb-32 border-y-2 border-black">
+      <div id="titleSurat" class="text-2xl font-semibold ml-1 pt-5 pl-2">
+        <h2 class="font-poppins">~Surat Ucapan</h2>
+      </div>
+      <!-- oke surat -->
+      <div id="container-envelope" class="grid place-items-center mt-40">
+        <div
+          class="envelope-wrapper bg-[#f5edd1] shadow-[0_0_40px_rgba(0, 0, 0, 0.2)] shadow-box"
+        >
+          <div class="envelope">
+            <div
+              id="letter"
+              class="absolute right-[20%] bottom-0 w-[54%] h-[80%] bg-white text-center transition-all duration-1000 ease-in-out shadow-[0_0_5px_rgba(0, 0, 0, 0.2)] py-5 px-[10px]"
+            >
+              <div
+                id="text"
+                class="font-sans text-[#444] text-left text-[10px]"
+              >
+                <strong>Dear My BestFriend.</strong>
+                <p>
+                  Selamat Ulang Tahun yang <br />
+                  ke-<b>17</b>, semoga bisa menjadi pribadi yang lebih baik dan
+                  bisa lebih percaya diri lagi.
+                </p>
+              </div>
+            </div>
+            <div class="heart">
+              <img src="./public/img/Gojo/Gojo1.png" alt="Gojo1" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- close surat -->
+    </section>
+    <!-- End bagian surat -->
+    <script>
+      const envelope = document.querySelector(".envelope-wrapper");
+      envelope.addEventListener("click", () => {
+        envelope.classList.toggle("flap");
+      });
+      const heart = document.querySelector(".heart");
+      heart.addEventListener("click", () => {
+        heart.classList.toggle("flap");
+      });
+    </script>
+  </body>
+  <!-- Bagian watermark pembuat -->
+  <footer class="bg-blue-600">
+    <div class="text-2xl font-semibold ml-1 pt-5 pl-2">
+      <h2 class="font-poppins">~Kontak</h2>
+    </div>
+    <div id="icon" class="text-center pt-10">
+      <a href="#">
+        <span class="text-4xl"><i class="fa-brands fa-whatsapp"></i></span>
+      </a>
+      <a href="#">
+        <span class="text-4xl"><i class="fa-brands fa-facebook"></i></span>
+      </a>
+      <a href="#">
+        <span class="text-4xl"><i class="fa-brands fa-instagram"></i> </span>
+      </a>
+      <a href="#">
+        <span class="text-4xl"><i class="fa-brands fa-github"></i></span>
+      </a>
+    </div>
+    <div class="h-16 text-center mt-5 font-poppins text-xl text-slate-300">
+      <p>This website make to my Best Friend❤️</p>
+    </div>
+  </footer>
+</html>
